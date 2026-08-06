@@ -1,0 +1,40 @@
+# dependencies
+node_modules/
+.pnpm-store/
+
+# build output
+dist/
+build/
+.next/
+out/
+*.tsbuildinfo
+
+# turbo cache
+.turbo/
+
+# test & coverage
+coverage/
+playwright-report/
+test-results/
+
+# secrets — nikad ne smeju u git
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# local data volumes (Docker)
+.data/
+pgdata/
+
+# editor & os
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+
+# logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
