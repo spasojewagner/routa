@@ -16,7 +16,11 @@
     "test": "turbo run test",
     "format": "prettier --write \"**/*.{ts,tsx,js,json,md,yaml,yml}\"",
     "format:check": "prettier --check \"**/*.{ts,tsx,js,json,md,yaml,yml}\"",
-    "lint:root": "eslint ."
+    "lint:root": "eslint .",
+    "db:up": "docker compose -f infra/docker-compose.yml up -d",
+    "db:down": "docker compose -f infra/docker-compose.yml down",
+    "db:logs": "docker compose -f infra/docker-compose.yml logs -f postgres",
+    "db:psql": "docker compose -f infra/docker-compose.yml exec postgres psql -U routa -d routa"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
