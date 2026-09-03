@@ -1,0 +1,16 @@
+{
+  "name": "@routa/core-api",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "dev": "node --watch --experimental-strip-types src/server.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@routa/config-typescript": "workspace:*",
+    "@types/node": "^22.10.0",
+    "typescript": "^5.9.3"
+  }
+}
