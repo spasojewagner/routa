@@ -1,5 +1,5 @@
 {
-  "extends": "@routa/config-typescript/node.json",
+  "extends": "@routa/config-typescript/nest.json",
   "compilerOptions": {
     "outDir": "dist",
     "rootDir": "src"

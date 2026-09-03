@@ -1,18 +1,18 @@
-import { createServer } from 'node:http';
+import 'reflect-metadata';
+import { NestFactory } from '@nestjs/core';
+import { Logger } from '@nestjs/common';
+import { AppModule } from './app.module';
 
-const PORT = Number(process.env.PORT ?? 3001);
+async function bootstrap(): Promise<void> {
+  const app = await NestFactory.create(AppModule);
 
-const server = createServer((req, res) => {
-  if (req.url === '/health' && req.method === 'GET') {
-    res.writeHead(200, { 'content-type': 'application/json' });
-    res.end(JSON.stringify({ status: 'ok', service: 'core-api' }));
-    return;
-  }
+  app.setGlobalPrefix('api');
+  app.enableShutdownHooks();
 
-  res.writeHead(404, { 'content-type': 'application/json' });
-  res.end(JSON.stringify({ error: 'not_found' }));
-});
+  const port = Number(process.env.PORT ?? 3001);
+  await app.listen(port);
 
-server.listen(PORT, () => {
-  console.warn(`core-api listening on http://localhost:${PORT}`);
-});
+  Logger.log(`core-api listening on http://localhost:${port}/api`, 'Bootstrap');
+}
+
+void bootstrap();
