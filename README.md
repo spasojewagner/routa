@@ -1,5 +1,7 @@
 # Routa
 
+[![CI](https://github.com/spasojewagner/routa/actions/workflows/ci.yml/badge.svg)](https://github.com/spasojewagner/routa/actions/workflows/ci.yml)
+
 **AI-native fleet operations platform.**
 
 Real-time telemetry, intelligent dispatch, and an evidence-based AI copilot for small and mid-size fleets.
